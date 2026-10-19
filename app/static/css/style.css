@@ -1,0 +1,271 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#eef4ff,#f9f8ff,#ffffff);
+    color:#222;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+    width:100%;
+    padding:25px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:26px;
+    font-weight:700;
+    color:#4F46E5;
+}
+
+.logo i{
+    font-size:32px;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+    width:90%;
+    margin:auto;
+    min-height:70vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.texto{
+    width:48%;
+    animation:aparecerEsquerda 1s ease;
+}
+
+.texto h1{
+    font-size:72px;
+    font-weight:700;
+    line-height:70px;
+    margin-bottom:25px;
+}
+
+.texto span{
+    color:#6D4AFF;
+}
+
+.texto p{
+    font-size:22px;
+    color:#666;
+    margin-bottom:40px;
+}
+
+.botao{
+    display:inline-block;
+    padding:18px 40px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#6D4AFF,#4F46E5);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    font-size:18px;
+    transition:.35s;
+    box-shadow:0 15px 35px rgba(109,74,255,.30);
+}
+
+.botao:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 45px rgba(109,74,255,.45);
+}
+
+/* ==========================
+   IMAGEM
+========================== */
+
+.imagem{
+    width:48%;
+    display:flex;
+    justify-content:center;
+    animation:aparecerDireita 1s ease;
+}
+
+.imagem img{
+    width:100%;
+    max-width:650px;
+    animation:flutuar 5s ease-in-out infinite;
+
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.cards{
+    width:90%;
+    margin:50px auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:22px;
+    padding:35px;
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 50px rgba(0,0,0,.12);
+}
+
+.card i{
+    font-size:40px;
+    color:#6D4AFF;
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media(max-width:1000px){
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.texto{
+    width:100%;
+}
+
+.imagem{
+    width:100%;
+    margin-top:50px;
+}
+
+.cards{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+@media(max-width:650px){
+.cards{
+    grid-template-columns:1fr;
+}
+.texto h1{
+    font-size:40px;
+    line-height:48px;
+}
+.texto p{
+    font-size:18px;
+}
+header{
+    padding:20px;
+}
+
+}
+
+/* ==========================
+   DECORAÇÃO DO FUNDO
+========================== */
+
+body{
+    overflow-x:hidden;
+    position:relative;
+}
+
+.bg-circle{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:.35;
+    z-index:-1;
+}
+
+.circle1{
+    width:320px; 
+    height:320px;
+    background:#7c5cff;
+    top:-100px;
+    left:-100px;
+}
+
+.circle2{
+    width:260px;
+    height:260px;
+    background:#66d9ff;
+    right:-70px;
+    top:180px;
+}
+
+.circle3{
+    width:250px;
+    height:250px;
+    background:#b892ff;
+    bottom:-100px;
+    left:45%; 
+}
+
+@keyframes flutuar{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px) ;
+    }
+}
+
+@keyframes aparecerEsquerda{
+    from{
+        opacity:0;
+        transform:translateX(-70px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes aparecerDireita{
+    from{
+        opacity:0;
+        transform:translateX(70px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
